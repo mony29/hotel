@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.dali.hotel.dao.RoomMapper">
+    <resultMap id="roomMapper" type="edu.dali.hotel.model.Room">
+        <id column="id" property="id"></id>
+        <result column="room_name" property="roomName"></result>
+        <result column="room_price" property="roomPrice"></result>
+        <result column="room_type" property="roomType"></result>
+        <result column="room_num" property="roomNum"></result>
+        <result column="room_area" property="roomArea"></result>
+        <result column="room_floor" property="roomFloor"></result>
+        <result column="desc" property="description"></result>
+    </resultMap>
+
+    <select id="getRoomList" resultMap="roomMapper">
+        SELECT  * FROM tbl_room
+    </select>
+
+</mapper>
+
+<!--    <select id="findUserByUsername" parameterType="String" resultMap="user">-->
+<!--        SELECT * FROM user-->
+<!--        WHERE user_name=#{1}-->
+<!--    </select>-->
+
+
+<!--    <update id="updateUserByUsername" parameterMap="user">-->
+<!--        UPDATE USER SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}-->
+<!--    </update>-->
+
+<!--    <delete id="deleteUserByUsername" parameterType="String">-->
+<!--        DELETE FROM USER WHERE USER_NAME=#{1}-->
+<!--    </delete>-->
+
+<!--    &lt;!&ndash; 使用alias自定义的parameterType&ndash;&gt;-->
+<!--    <insert id="saveUser" parameterType="user">-->
+<!--        INSERT INTO USER (user_password,user_name) VALUES (#{user_password},#{user_name})-->
+<!--    </insert>-->
+
