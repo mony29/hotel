@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface RoomService {
     List<Room> getRoomList();
+    Room getRoomById (Integer id);
+    Integer update(Room room);
 }

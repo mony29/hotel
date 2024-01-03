@@ -4,36 +4,56 @@
     <resultMap id="roomMapper" type="edu.dali.hotel.model.Room">
         <id column="id" property="id"></id>
         <result column="room_name" property="roomName"></result>
-        <result column="room_price" property="roomPrice"></result>
+        <result column="food" property="food"></result>
         <result column="room_type" property="roomType"></result>
-        <result column="room_num" property="roomNum"></result>
-        <result column="room_area" property="roomArea"></result>
-        <result column="room_floor" property="roomFloor"></result>
-        <result column="desc" property="description"></result>
+        <result column="internet" property="internet"></result>
+        <result column="room_price" property="roomPrice"></result>
+        <result column="booking_price" property="bookingPrice"></result>
+
     </resultMap>
 
     <select id="getRoomList" resultMap="roomMapper">
-        SELECT  * FROM tbl_room
+        SELECT *
+        FROM tbl_room
     </select>
+
+    <select id="getRoomById" resultMap="roomMapper">
+        SELECT *
+        FROM tbl_room
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="edu.dali.hotel.model.Room">
+        update tbl_room
+        <set>
+            <if test="roomName != null ">
+                room_name = #{roomName}
+            </if>
+            <if test="roomPrice != null">
+                room_price = #{roomPrice}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 
 </mapper>
 
-<!--    <select id="findUserByUsername" parameterType="String" resultMap="user">-->
-<!--        SELECT * FROM user-->
-<!--        WHERE user_name=#{1}-->
-<!--    </select>-->
+        <!--    <select id="findUserByUsername" parameterType="String" resultMap="user">-->
+        <!--        SELECT * FROM user-->
+        <!--        WHERE user_name=#{1}-->
+        <!--    </select>-->
 
 
-<!--    <update id="updateUserByUsername" parameterMap="user">-->
-<!--        UPDATE USER SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}-->
-<!--    </update>-->
+        <!--    <update id="updateUserByUsername" parameterMap="user">-->
+        <!--        UPDATE USER SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}-->
+        <!--    </update>-->
 
-<!--    <delete id="deleteUserByUsername" parameterType="String">-->
-<!--        DELETE FROM USER WHERE USER_NAME=#{1}-->
-<!--    </delete>-->
+        <!--    <delete id="deleteUserByUsername" parameterType="String">-->
+        <!--        DELETE FROM USER WHERE USER_NAME=#{1}-->
+        <!--    </delete>-->
 
-<!--    &lt;!&ndash; 使用alias自定义的parameterType&ndash;&gt;-->
-<!--    <insert id="saveUser" parameterType="user">-->
-<!--        INSERT INTO USER (user_password,user_name) VALUES (#{user_password},#{user_name})-->
-<!--    </insert>-->
+        <!--    &lt;!&ndash; 使用alias自定义的parameterType&ndash;&gt;-->
+        <!--    <insert id="saveUser" parameterType="user">-->
+        <!--        INSERT INTO USER (user_password,user_name) VALUES (#{user_password},#{user_name})-->
+        <!--    </insert>-->
 

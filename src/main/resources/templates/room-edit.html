@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/rooms/update" method="post">
+        <input type="hidden" name="id" th:value="${room.id}">
+        房间名称：<input type="text" name="roomName" th:value="${room.roomName}"> <br>
+        门市价：<input type="text" name="roomPrice" th:value="${room.roomPrice}"> <br>
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+</html>

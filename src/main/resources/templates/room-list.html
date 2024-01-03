@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>room-list</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>房型</th>
+        <th>早餐</th>
+        <th>床型</th>
+        <th>宽带</th>
+        <th>门市价</th>
+        <th>预定价</th>
+        <th>预定</th>
+    </tr>
+    <tr th:each="room:${rooms}">
+        <td th:text="${room.roomName}"></td>
+        <td th:text="${room.food}"></td>
+        <td th:text="${room.roomType}"></td>
+        <td th:text="${room.internet}"></td>
+        <td th:text="${room.roomPrice}"></td>
+        <td th:text="${room.bookingPrice}"></td>
+        <td>
+            <a th:href="@{/rooms/edit_page(id=${room.id})}">Edit</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -3,12 +3,20 @@ package edu.dali.hotel.model;
 public class Room {
     private Integer id;
     private String roomName;
-    private String roomPrice;
+    private String food;
     private String roomType;
-    private Integer roomNum;
-    private Integer roomArea;
-    private Integer roomFloor;
-    private String description;
+    private String internet; // kuandai
+    private String roomPrice;
+    private String bookingPrice;
+    public Room(Integer id, String roomName, String food, String roomType, String internet, String roomPrice, String bookingPrice) {
+        this.id = id;
+        this.roomName = roomName;
+        this.food = food;
+        this.roomType = roomType;
+        this.internet = internet;
+        this.roomPrice = roomPrice;
+        this.bookingPrice = bookingPrice;
+    }
 
     public Integer getId() {
         return id;
@@ -26,12 +34,12 @@ public class Room {
         this.roomName = roomName;
     }
 
-    public String getRoomPrice() {
-        return roomPrice;
+    public String getFood() {
+        return food;
     }
 
-    public void setRoomPrice(String roomPrice) {
-        this.roomPrice = roomPrice;
+    public void setFood(String food) {
+        this.food = food;
     }
 
     public String getRoomType() {
@@ -42,35 +50,27 @@ public class Room {
         this.roomType = roomType;
     }
 
-    public Integer getRoomNum() {
-        return roomNum;
+    public String getInternet() {
+        return internet;
     }
 
-    public void setRoomNum(Integer roomNum) {
-        this.roomNum = roomNum;
+    public void setInternet(String internet) {
+        this.internet = internet;
     }
 
-    public Integer getRoomArea() {
-        return roomArea;
+    public String getRoomPrice() {
+        return roomPrice;
     }
 
-    public void setRoomArea(Integer roomArea) {
-        this.roomArea = roomArea;
+    public void setRoomPrice(String roomPrice) {
+        this.roomPrice = roomPrice;
     }
 
-    public Integer getRoomFloor() {
-        return roomFloor;
+    public String getBookingPrice() {
+        return bookingPrice;
     }
 
-    public void setRoomFloor(Integer roomFloor) {
-        this.roomFloor = roomFloor;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBookingPrice(String bookingPrice) {
+        this.bookingPrice = bookingPrice;
     }
 }

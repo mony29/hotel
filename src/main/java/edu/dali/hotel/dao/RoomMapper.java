@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface RoomMapper {
     List<Room> getRoomList();
+    Room getRoomById (Integer id);
+    Integer update(Room room);
 }
