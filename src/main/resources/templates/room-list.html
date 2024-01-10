@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet"/>
@@ -7,23 +7,78 @@
     <title>Room List</title>
 </head>
 <body>
-<div class="relative mt-10">
-    <a th:href="@{/rooms/room_add_view}" class="bg-blue-500 px-3 py-1 text-white rounded font-medium ">
-        新增房间
+<p class="flex bg-green-100 w-1/2 pt-6 px-4 py-2 my-2 text-lg text-blue-700 font-semibold rounded">
+    <span class="mr-2 bg-[#FF9119] text-white font-medium text-sm px-2 py-1">
+        酒店编号</span>
+    大理海湾国际酒店
+    <span class="ml-4 flex items-center">
+        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             fill="currentColor"
+             viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+        </svg>
+        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             fill="currentColor"
+             viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+        </svg>
+        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             fill="currentColor"
+             viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+        </svg>
+        <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             fill="currentColor"
+             viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+        </svg>
+        <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+             fill="currentColor" viewBox="0 0 22 20">
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+        </svg>
+    </span>
+
+</p>
+<div class="mb-6 w-1/2">
+    <a class="flex flex-col items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="pl-4 object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+             src="/images/hotel.jpg" alt="hotel.jpg">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+            <p class="mb-3 text-sm font-medium text-gray-700 dark:text-gray-400">预定价格：
+                <span class="text-red-700 text-lg font-medium">¥558起</span>
+                无需支付定金</p>
+            <p class="mb-3 text-sm font-medium text-gray-700 dark:text-gray-400">开业时间：2024</p>
+            <p class="mb-3 text-sm font-medium text-gray-700 dark:text-gray-400">周边环境：洱海天</p>
+            <p class="mb-3 text-sm font-medium text-gray-700 dark:text-gray-400">酒店地址：大理州大理市古城
+                <span class="ml-2 underline text-blue-700 cursor-pointer">查看地址</span>
+            </p>
+        </div>
     </a>
 </div>
 
-<div class="relative mt-10">
-    <table class=" shadow-lg mx-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<div class="relative w-1/2 border-2 shadow-md sm:rounded">
+    <div class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+        <div class="pl-4 mt-8 mb-4">
+            <a th:href="@{/rooms/room_add_view}"
+               class="bg-blue-500 px-3 py-2 text-white rounded font-medium ">
+                新增房间
+            </a>
+        </div>
+
+        <div class="relative mr-6">
+            <input type="search" id="table-search"
+                   class=" mt-4 block ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   placeholder="Search...">
+        </div>
+    </div>
+
+    <p class="bg-green-100 w-fit px-6 py-2 text-blue-700 font-semibold">
+        酒店房型（点击房型查看详情）
+    </p>
+
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-            <th scope="col" class="p-4">
-                <div class="flex items-center">
-                    <input id="checkbox-all-search" type="checkbox"
-                           class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                </div>
-            </th>
             <th scope="col" class="px-6 py-3">
                 房型
             </th>
@@ -47,32 +102,27 @@
             </th>
         </tr>
         </thead>
+
         <tbody>
         <tr th:each="room:${rooms}"
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <td class="w-4 p-4">
-                <div class="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox"
-                           class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                </div>
-            </td>
             <th th:text="${room.roomName}" scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                class="px-6 py-4 font-semibold text-blue-700 whitespace-nowrap dark:text-white">
             </th>
-            <td th:text="${room.food}" class="px-6 py-4">
+            <td th:text="${room.food}" class="font-medium px-6 py-4 text-blue-600">
             </td>
-            <td th:text="${room.roomType}" class="px-6 py-4">
+            <td th:text="${room.roomType}" class="font-medium text-blue-600 px-6 py-4">
             </td>
-            <td th:text="${room.internet}" class="px-6 py-4">
+            <td th:text="${room.internet}" class="font-semibold text-blue-600 px-6 py-4">
             </td>
-            <td th:text="${room.roomPrice}" class="px-6 py-4">
+            <td th:text="'¥' + ${room.roomPrice}" class="line-through font-medium px-6 py-4 text-red-700">
             </td>
-            <td th:text="${room.bookingPrice}" class="px-6 py-4">
+            <td th:text="'¥' + ${room.bookingPrice}" class="font-medium px-6 py-4 text-red-700">
             </td>
             <td class="flex items-center px-6 py-4">
                 <a th:href="@{/rooms/edit_page(id=${room.id})}"
-                   class="mr-2 bg-green-500 px-3 py-1 text-white rounded font-medium ">编辑</a>
+                   class="mr-2 bg-green-500 px-3 py-1 text-white rounded font-medium">
+                    编辑</a>
                 <a th:href="@{/rooms/delete/{id}(id=${room.id})}" onclick="return confirm('你确定的删除吗？')"
                    class="bg-red-500 px-3 py-1 text-white rounded font-medium ">删除</a>
             </td>
@@ -80,5 +130,7 @@
         </tbody>
     </table>
 </div>
+
+
 </body>
 </html>
