@@ -26,4 +26,14 @@ public class RoomServiceImp implements RoomService {
     public Integer update(Room room) {
         return roomMapper.update(room);
     }
+
+    @Override
+    public Integer addRoom(Room room) {
+        return roomMapper.addRoom(room);
+    }
+
+    @Override
+    public void deleteRoom(Integer id) {
+        roomMapper.deleteRoom(id);
+    }
 }

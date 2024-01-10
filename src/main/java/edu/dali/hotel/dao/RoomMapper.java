@@ -10,4 +10,6 @@ public interface RoomMapper {
     List<Room> getRoomList();
     Room getRoomById (Integer id);
     Integer update(Room room);
+    Integer addRoom(Room room);
+    void deleteRoom(Integer id);
 }

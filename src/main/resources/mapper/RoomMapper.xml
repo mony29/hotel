@@ -26,15 +26,36 @@
     <update id="update" parameterType="edu.dali.hotel.model.Room">
         update tbl_room
         <set>
-            <if test="roomName != null ">
-                room_name = #{roomName}
+            <if test="roomName != null">
+                room_name = #{roomName},
+            </if>
+            <if test="food != null">
+                food = #{food},
+            </if>
+            <if test="roomType != null">
+                room_type = #{roomType},
+            </if>
+            <if test="internet != null">
+                internet = #{internet},
             </if>
             <if test="roomPrice != null">
-                room_price = #{roomPrice}
+                room_price = #{roomPrice},
+            </if>
+            <if test="bookingPrice != null">
+                booking_price = #{bookingPrice},
             </if>
         </set>
         where id = #{id}
     </update>
+
+    <insert id="addRoom" parameterType="edu.dali.hotel.model.Room">
+        insert into tbl_room(room_name, food, room_type, internet, room_price, booking_price)
+        values (#{roomName}, #{food}, #{roomType}, #{internet}, #{roomPrice}, #{bookingPrice})
+    </insert>
+
+    <delete id="deleteRoom">
+        delete from tbl_room where id = #{id}
+    </delete>
 
 </mapper>
 

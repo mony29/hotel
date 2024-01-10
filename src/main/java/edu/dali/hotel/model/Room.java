@@ -18,6 +18,10 @@ public class Room {
         this.bookingPrice = bookingPrice;
     }
 
+    public Room() {
+
+    }
+
     public Integer getId() {
         return id;
     }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <title>Room Add</title>
+</head>
+<body>
+
+
+<form method="post" action="/rooms/add" th:object="${room}" class="max-w-sm mx-auto">
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            房型</label>
+        <input type="text" id="roomName" name="roomName" th:field="*{roomName}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            早餐</label>
+        <input type="text" id="food" name="food" th:field="*{food}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            床型</label>
+        <input type="text" id="roomType" name="roomType" th:field="*{roomType}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            宽带</label>
+        <input type="text" id="internet" name="internet" th:field="*{internet}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            门市价</label>
+        <input type="number" id="roomPrice" name="roomPrice" th:field="*{roomPrice}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <div class="mb-5">
+        <label for="roomName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            预定价</label>
+        <input type="number" id="bookingPrice" name="bookingPrice" th:field="*{bookingPrice}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    </div>
+    <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        保存
+    </button>
+</form>
+
+
+</body>
+</html>
