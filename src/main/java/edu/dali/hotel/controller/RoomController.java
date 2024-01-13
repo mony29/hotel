@@ -25,6 +25,7 @@ public class RoomController {
     public String toRoomListPage(ModelMap modelMap) {
         List<Room> roomList = roomService.getRoomList();
         modelMap.addAttribute("rooms", roomList);
+        // 返回到房间列表页面
         return "room-list";
     }
 
@@ -34,7 +35,6 @@ public class RoomController {
         modelMap.addAttribute("room", room);
         return "room-edit";
     }
-
     @PostMapping("/update")
     public String update(Room room) {
         roomService.update(room);
@@ -47,16 +47,24 @@ public class RoomController {
         modelMap.addAttribute("room", new Room());
         return "room-add";
     }
-
     @PostMapping("/add")
     public String doRoomAdd(@ModelAttribute("room") Room room) {
         roomService.addRoom(room);
+        // 返回到房间列表
         return "redirect:/rooms/to/room-list-page";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteRoom(@PathVariable Integer id){
         roomService.deleteRoom(id);
+        // 返回到房间列表
+        return "redirect:/rooms/to/room-list-page";
+    }
+
+    @GetMapping("/searchRoomByName")
+    public String searchRoomByName(@RequestParam String roomName, ModelMap modelMap){
+        List<Room> searchResult = roomService.searchRoomByName(roomName);
+        modelMap.addAttribute("searchResult", searchResult);
         return "redirect:/rooms/to/room-list-page";
     }
 }

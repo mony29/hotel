@@ -5,7 +5,7 @@ public class Room {
     private String roomName;
     private String food;
     private String roomType;
-    private String internet; // kuandai
+    private String internet;
     private String roomPrice;
     private String bookingPrice;
     public Room(Integer id, String roomName, String food, String roomType, String internet, String roomPrice, String bookingPrice) {
@@ -18,9 +18,7 @@ public class Room {
         this.bookingPrice = bookingPrice;
     }
 
-    public Room() {
-
-    }
+    public Room() { }
 
     public Integer getId() {
         return id;

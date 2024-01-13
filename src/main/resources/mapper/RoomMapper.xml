@@ -9,18 +9,17 @@
         <result column="internet" property="internet"></result>
         <result column="room_price" property="roomPrice"></result>
         <result column="booking_price" property="bookingPrice"></result>
-
     </resultMap>
-
     <select id="getRoomList" resultMap="roomMapper">
-        SELECT *
-        FROM tbl_room
+        select * from tbl_room
     </select>
 
     <select id="getRoomById" resultMap="roomMapper">
-        SELECT *
-        FROM tbl_room
-        where id = #{id}
+        select * from tbl_room where id = #{id}
+    </select>
+
+    <select id="searchRoomByName" resultMap="roomMapper" parameterType="String">
+        select * from tbl_room where room_name = #{roomName}
     </select>
 
     <update id="update" parameterType="edu.dali.hotel.model.Room">
@@ -58,23 +57,3 @@
     </delete>
 
 </mapper>
-
-        <!--    <select id="findUserByUsername" parameterType="String" resultMap="user">-->
-        <!--        SELECT * FROM user-->
-        <!--        WHERE user_name=#{1}-->
-        <!--    </select>-->
-
-
-        <!--    <update id="updateUserByUsername" parameterMap="user">-->
-        <!--        UPDATE USER SET USER_PASSWORD=#{user_password} WHERE USER_NAME=#{user_name}-->
-        <!--    </update>-->
-
-        <!--    <delete id="deleteUserByUsername" parameterType="String">-->
-        <!--        DELETE FROM USER WHERE USER_NAME=#{1}-->
-        <!--    </delete>-->
-
-        <!--    &lt;!&ndash; 使用alias自定义的parameterType&ndash;&gt;-->
-        <!--    <insert id="saveUser" parameterType="user">-->
-        <!--        INSERT INTO USER (user_password,user_name) VALUES (#{user_password},#{user_name})-->
-        <!--    </insert>-->
-

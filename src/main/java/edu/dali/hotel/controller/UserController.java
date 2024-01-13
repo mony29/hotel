@@ -19,6 +19,7 @@ public class UserController {
     @PostMapping("/login")
     public String doLogin(@ModelAttribute("user") User user, ModelMap modelMap) {
         modelMap.addAttribute("user", user);
+        // 返回到房间列表
         return "redirect:/rooms/to/room-list-page";
     }
 }

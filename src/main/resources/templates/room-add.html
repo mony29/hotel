@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <!-- 连接Tailwind CSS框架 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
-    <title>Room Add</title>
+    <title>新增房间页面</title>
 </head>
 <body>
-
 
 <div class="mt-8 p-8 border shadow-lg rounded-md max-w-xs mx-auto">
     <form method="post" action="/rooms/add" th:object="${room}"
@@ -18,37 +18,37 @@
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 房型</label>
-            <input type="text" id="roomName" name="roomName" th:field="*{roomName}"
+            <input type="text" id="roomName" name="roomName" th:field="*{roomName}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 早餐</label>
-            <input type="text" id="food" name="food" th:field="*{food}"
+            <input type="text" id="food" name="food" th:field="*{food}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 床型</label>
-            <input type="text" id="roomType" name="roomType" th:field="*{roomType}"
+            <input type="text" id="roomType" name="roomType" th:field="*{roomType}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 宽带</label>
-            <input type="text" id="internet" name="internet" th:field="*{internet}"
+            <input type="text" id="internet" name="internet" th:field="*{internet}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 门市价</label>
-            <input type="number" id="roomPrice" name="roomPrice" th:field="*{roomPrice}"
+            <input type="number" id="roomPrice" name="roomPrice" th:field="*{roomPrice}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="mb-3">
             <label for="roomName" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 预定价</label>
-            <input type="number" id="bookingPrice" name="bookingPrice" th:field="*{bookingPrice}"
+            <input type="number" id="bookingPrice" name="bookingPrice" th:field="*{bookingPrice}" required
                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div class="flex">
@@ -64,6 +64,7 @@
     </form>
 </div>
 
+<!--采用JavaScript方法-->
 <script>
     function goBack() {
         window.history.back();

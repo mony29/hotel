@@ -10,4 +10,5 @@ public interface RoomService {
     Integer update(Room room);
     Integer addRoom(Room room);
     void deleteRoom(Integer id);
+    List<Room> searchRoomByName(String roomName);
 }

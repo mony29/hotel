@@ -36,4 +36,9 @@ public class RoomServiceImp implements RoomService {
     public void deleteRoom(Integer id) {
         roomMapper.deleteRoom(id);
     }
+
+    @Override
+    public List<Room> searchRoomByName(String roomName) {
+        return roomMapper.searchRoomByName(roomName);
+    }
 }
