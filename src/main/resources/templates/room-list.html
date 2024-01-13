@@ -127,9 +127,8 @@
             <td class="flex items-center px-6 py-4">
                 <a th:href="@{/rooms/edit_page(id=${room.id})}"
                    class="mr-2 bg-green-500 px-3 py-1 text-white rounded font-medium">编辑</a>
-                <a th:href="@{/rooms/delete/{id}(id=${room.id})}"
-                   onclick="return confirm('你确定的删除吗？')">删除
-                </a>
+                <a th:href="@{/rooms/delete/{id}(id=${room.id})}" onclick="return confirm('你确定的删除吗？')"
+                   class="bg-red-500 px-3 py-1 text-white rounded font-medium ">删除</a>
             </td>
         </tr>
         </tbody>
