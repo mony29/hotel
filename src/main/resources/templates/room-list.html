@@ -72,8 +72,16 @@
 
         <!-- 搜索文本框 -->
         <div class="relative mr-6">
-            <input type="search" id="table-search" placeholder="Search..."
-                   class=" mt-4 block ps-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <form th:action="@{/rooms/searchRoomByName}" method="get">
+                <div class="flex w-full justify-center mt-4 ">
+                    <input type="search" name="roomName" id="table-search" placeholder="Search..."
+                           class="block ps-10 text-sm text-gray-900 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <button type="submit"
+                            class="ml-2 bg-blue-500 px-3 py-2 text-white rounded font-medium">
+                        搜索
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -109,7 +117,7 @@
         </thead>
 
         <tbody>
-        <tr th:each="room:${rooms}"
+        <tr th:each="room : ${#lists.isEmpty(searchResult) ? rooms : searchResult}"
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <th th:text="${room.roomName}" scope="row"
                 class="px-6 py-4 font-semibold text-blue-700 whitespace-nowrap dark:text-white">
@@ -127,7 +135,8 @@
             <td class="flex items-center px-6 py-4">
                 <a th:href="@{/rooms/edit_page(id=${room.id})}"
                    class="mr-2 bg-green-500 px-3 py-1 text-white rounded font-medium">编辑</a>
-                <a th:href="@{/rooms/delete/{id}(id=${room.id})}" onclick="return confirm('你确定的删除吗？')"
+                <a th:href="@{/rooms/delete/{id}(id=${room.id})}"
+                   onclick="return confirm('你确定的删除吗？')"
                    class="bg-red-500 px-3 py-1 text-white rounded font-medium ">删除</a>
             </td>
         </tr>

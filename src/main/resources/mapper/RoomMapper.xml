@@ -11,15 +11,23 @@
         <result column="booking_price" property="bookingPrice"></result>
     </resultMap>
     <select id="getRoomList" resultMap="roomMapper">
-        select * from tbl_room
+        select *
+        from tbl_room
     </select>
 
     <select id="getRoomById" resultMap="roomMapper">
-        select * from tbl_room where id = #{id}
+        select *
+        from tbl_room
+        where id = #{id}
     </select>
 
     <select id="searchRoomByName" resultMap="roomMapper" parameterType="String">
-        select * from tbl_room where room_name = #{roomName}
+        SELECT * FROM tbl_room
+        <where>
+            <if test="roomName != null and roomName !=''">
+                AND room_name LIKE CONCAT(#{roomName}, '%')
+            </if>
+        </where>
     </select>
 
     <update id="update" parameterType="edu.dali.hotel.model.Room">
@@ -53,7 +61,9 @@
     </insert>
 
     <delete id="deleteRoom">
-        delete from tbl_room where id = #{id}
+        delete
+        from tbl_room
+        where id = #{id}
     </delete>
 
 </mapper>

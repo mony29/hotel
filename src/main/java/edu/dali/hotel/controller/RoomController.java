@@ -64,6 +64,6 @@ public class RoomController {
     public String searchRoomByName(@RequestParam String roomName, ModelMap modelMap){
         List<Room> searchResult = roomService.searchRoomByName(roomName);
         modelMap.addAttribute("searchResult", searchResult);
-        return "redirect:/rooms/to/room-list-page";
+        return "room-list";
     }
 }
