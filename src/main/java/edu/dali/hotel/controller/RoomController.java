@@ -60,6 +60,7 @@ public class RoomController {
         // 返回到房间列表
         return "redirect:/rooms/to/room-list-page";
     }
+
     @GetMapping("/searchRoomByName")
     public String searchRoomByName(@RequestParam String roomName, ModelMap modelMap){
         List<Room> searchResult = roomService.searchRoomByName(roomName);
